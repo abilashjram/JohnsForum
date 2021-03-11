@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+John's Forum - Login
+{% endblock title %}
+
+{% block content %}
+<h3>Login to John's Forum</h3>
+
+
+<form method="post">
+    <input type="text" name="username" placeholder="Enter Your Username">
+    <br>
+    <input type="password" name="password" placeholder="Enter your password">
+    <br>
+
+    <button type="submit">Login</button>
+
+</form>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+John's Forum - {{topic.title}}
+{% endblock title %}
+
+{% block content %}
+<h3>{{ topic.title }}</h3>
+<p> by {{ topic.author.username }}</p>
+<p>
+    <a href="/topic/{{topic.id}}/edit"> Edit </a> |
+    <a href="/topic/{{topic.id}}/delete"> Delete </a>
+</p>
+<br>
+<p> {{ topic.text }}</p>
+
+<form method="post" action="/topic/{{topic.id}}/create-comment">
+
+    <textarea name="text" rows="3" placeholder="Enter your comment"></textarea>
+
+    <button>Submit</button>
+</form>
+
+{% for comment in comments %}
+
+    <p>{{comment.author.username}} said :</p>
+    <p>{{comment.text}}</p>
+<br>
+
+{% endfor %}
+{% endblock content %}
