@@ -7,9 +7,9 @@ from sendgrid.helpers.mail import Mail
 
 def send_email(receiver_email, subject, text):
 
-    sender_email = os.getenv("SENDGRID_API_KEY")
+    sender_email = os.getenv("MY_SENDER_EMAIL")
 
-    api_key = os.getenv("MAIL_API_KEY")
+    api_key = os.getenv("SENDGRID_API_KEY")
 
     if sender_email and api_key:
         url = "https://api.sendgrid.com/v3/mail/send"
