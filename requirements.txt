@@ -4,3 +4,5 @@ sqla_wrapper
 smartninja_redis
 requests
 sendgrid
+psycopg2
+huey

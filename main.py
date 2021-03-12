@@ -3,6 +3,8 @@ from models.dbSettings import db
 from models.user import User
 from models.topic import Topic
 from models.comment import Comment
+from tasks import get_random_num
+
 
 import os
 import uuid
@@ -128,6 +130,8 @@ def topic_create():
             return "invalid token"
 @app.route("/topic/<topic_id>")
 def topic_details(topic_id):
+
+    get_random_num()
     topic = db.query(Topic).get(int(topic_id))
     comments = db.query(Comment).filter_by(topic=topic).all()
 
